@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "b492aad5-9722-4694-a52f-d325d3bbd1a0",
+		"name": "collection2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get request",
+			"item": [
+				{
+					"name": "verify user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" pm.variables.set(\"school\" ,\"passmore\");\r",
+									"console.log(pm.variables.get(\"school\"));\r",
+									"\r",
+									"\r",
+									"console.log(pm.globals.get(\"url\"));\r",
+									"\r",
+									"\r",
+									"console.log(pm.environment.get(\"devops\"));\r",
+									"pm.environment.set(\"env\", \"QA\");\r",
+									"let envVar= pm.environment.get(\"env\");\r",
+									"console.log(envVar);\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/users?page=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
